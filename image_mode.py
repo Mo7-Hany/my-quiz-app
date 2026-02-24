@@ -7,7 +7,7 @@ import random
 
 def processing_image(file,mode_selection, manual_page_num):
     # 1. إعداد العميل (تأكد من استخدام مفتاحك الصحيح)
-    client = genai.Client(api_key="AIzaSyAz1pDQDMp-ZOy29q2jv8WU4tkgJ371v_I")
+    client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
     if file is not None:
         # قراءة الملف وتحويله لصور (كما في كودك)
@@ -104,3 +104,4 @@ def processing_image(file,mode_selection, manual_page_num):
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
