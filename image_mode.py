@@ -57,7 +57,7 @@ def processing_image(file,mode_selection, manual_page_num):
     if "quiz_data1" not in st.session_state:
             with st.spinner("جاري توليد الأسئلة من جيميني..."):
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash", 
+                    model="gemini-2.5-flash-lite", 
                     contents=[
                         my_prompt,
                         types.Part.from_bytes(data=image_bytes, mime_type="image/png")
@@ -104,6 +104,7 @@ def processing_image(file,mode_selection, manual_page_num):
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
 
 
 
