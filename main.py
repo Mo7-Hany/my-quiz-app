@@ -32,10 +32,11 @@ if file:
         [None,"كل الصفحات (Text Mode فقط)", "صفحة محددة يدويًا", "صفحة عشوائية 🎲"]
     )
 
-    if page_selection_mode == "صفحة محددة يدويًا":
-        # سنفترض أننا سنعرف عدد الصفحات داخل الدوال، لكن مبدئياً نضع رقماً
-        selected_page = st.sidebar.number_input("أدخل رقم الصفحة:", min_value=1, value=1)
+    if page_selection_mode == None:
+        
+        st.write("please select qouestion mode from sidebar")
     
+        
     st.sidebar.divider()
 if file:
     if mode == "Image Mode (High Quality)":
@@ -46,4 +47,5 @@ if file:
          processing_text(file, page_selection_mode, selected_page)
     else :
       st.write("please select an mode from sidebar ")      
+
         
