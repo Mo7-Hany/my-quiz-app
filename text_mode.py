@@ -2,7 +2,7 @@ import streamlit as st
 import pdfplumber
 import re 
 import json
-import google.generativeai as genai
+from google import genai
 from google.genai import types 
 import random   
 pattern = r"[ـ&^#ـ]"  
@@ -104,6 +104,7 @@ def processing_text (file, mode_selection, manual_page_num):
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
 
 
 
