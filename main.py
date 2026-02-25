@@ -29,12 +29,12 @@ if file:
     st.sidebar.subheader("إعدادات الصفحات")
     page_selection_mode = st.sidebar.radio(
         "اختر طريقة معالجة الصفحات:",
-        [None,"كل الصفحات (Text Mode فقط)", "صفحة محددة يدويًا", "صفحة عشوائية 🎲"]
+        ["كل الصفحات (Text Mode فقط)", "صفحة محددة يدويًا", "صفحة عشوائية 🎲"]
     )
 
-    if page_selection_mode == None:
+    if page_selection_mode == "صفحة محددة يدويًا" :
         
-        st.write("please select qouestion mode from sidebar")
+        selected_page = st.sidebar.number_input("ادخل رقم الصفحة :"min_value =1,value=1)
     
         
     st.sidebar.divider()
@@ -49,3 +49,4 @@ if file:
       st.write("please select an mode from sidebar ")      
 
         
+
