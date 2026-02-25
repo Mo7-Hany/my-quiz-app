@@ -12,9 +12,10 @@ def clean (text) :
       return(re.sub(pattern,"",text)) 
 
 def processing_text (file, mode_selection, manual_page_num):
-    client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
-    all_text = ""      
-    if file is not None :
+      api_key =st.secrets["GEMINI_API_KEY"]
+      client = genai.Client(api_key=api_key)
+      all_text = ""      
+      if file is not None :
          with pdfplumber.open(file) as pdf:
           total_pages = len(pdf.pages)
         
@@ -104,6 +105,7 @@ def processing_text (file, mode_selection, manual_page_num):
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
 
 
 
