@@ -34,7 +34,7 @@ if file:
 
     if page_selection_mode == "صفحة محددة يدويًا" :
         
-        selected_page = st.sidebar.number_input("ادخل رقم الصفحة :"min_value =1,value=1)
+        selected_page = st.sidebar.number_input("ادخل رقم الصفحة", min_value=1, value=1)
     
         
     st.sidebar.divider()
@@ -49,4 +49,5 @@ if file:
       st.write("please select an mode from sidebar ")      
 
         
+
 
