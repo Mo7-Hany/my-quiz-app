@@ -106,3 +106,4 @@ def processing_text (file, mode_selection, manual_page_num):
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
 
 
+
