@@ -1,5 +1,6 @@
 streamlit
-google-genai
+google-genai >=0.12.0
 pdfplumber
 PyMuPDF
+
 
