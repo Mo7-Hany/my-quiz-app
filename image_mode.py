@@ -1,6 +1,6 @@
 import fitz
 import streamlit as st 
-from google import genai 
+import google.generativeai as genai
 import json
 from google.genai import types 
 import random
@@ -104,5 +104,6 @@ def processing_image(file,mode_selection, manual_page_num):
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
 
 
