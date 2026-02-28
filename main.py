@@ -76,6 +76,12 @@ if file:
         "اختر طريقة معالجة الصفحات:",
         [ "صفحة محددة يدويًا", "صفحة عشوائية 🎲"]
     )
+    num_questions = st.slider("Number of questions", min_value=1, max_value=20, value=5)
+    difficulty = st.selectbox("Difficulty level", ("easy", "medium", "hard"))
+    st.markdown("---")
+    if st.button("Reset Everything"):
+        st.session_state.clear()
+        st.experimental_rerun()
 
     if page_selection_mode == "صفحة محددة يدويًا" :
         
@@ -94,6 +100,7 @@ if file:
       st.write("please select an mode from sidebar ")      
 
         
+
 
 
 
