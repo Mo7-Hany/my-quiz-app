@@ -6,7 +6,52 @@ from google import genai
 from google.genai import types
 from image_mode import processing_image
 from text_mode import processing_text 
+st.markdown("""
+    <style>
+    /* تغيير خلفية التطبيق ولون الخط */
+    .main {
+        background-color: #f5f7f9;
+    }
+    
+    /* تجميل الأزرار */
+    .stButton>button {
+        width: 100%;
+        border-radius: 10px;
+        height: 3em;
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        border: none;
+        transition: 0.3s;
+    }
+    
+    .stButton>button:hover {
+        background-color: #0056b3;
+        color: #ffffff;
+        transform: scale(1.02);
+    }
 
+    /* تجميل الـ Sidebar */
+    [data-testid="stSidebar"] {
+        background-image: linear-gradient(#2e3b4e, #1a242f);
+        color: white;
+    }
+    
+    /* العناوين */
+    h1 {
+        color: #1e3a5f;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+    }
+
+    /* تنسيق كروت الأسئلة */
+    .stSelectbox {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 st.title("AI PDF Quiz Generator")
 mode = st.sidebar.selectbox("Choose processing mode:", [None, "Image Mode (High Quality)", "Text Mode (Fast)"])
 
@@ -49,5 +94,6 @@ if file:
       st.write("please select an mode from sidebar ")      
 
         
+
 
 
