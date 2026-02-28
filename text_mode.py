@@ -11,8 +11,8 @@ def clean (text) :
       global pattern    
       return(re.sub(pattern,"",text)) 
 
-def processing_text (file, mode_selection, manual_page_num):
-      api_key =st.secrets["GEMINI_API_KEY"]
+def processing_text (file, mode_selection, manual_page_num,num_questions,difficulty):
+      api_key ="AIzaSyByeG3UKg69KoMFqNMlHfwbeDLybyRgdis"
       client = genai.Client(api_key=api_key)
       all_text = ""      
       if file is not None :
@@ -55,6 +55,7 @@ def processing_text (file, mode_selection, manual_page_num):
         
          if "quiz_data1" not in st.session_state:
             with st.spinner("جاري توليد الأسئلة من جيميني..."):
+              try :
                 response = client.models.generate_content(
                     model="gemini-2.5-flash-lite", 
                     contents=[
@@ -63,8 +64,12 @@ def processing_text (file, mode_selection, manual_page_num):
                     ],
                     config={"response_mime_type": "application/json"}
                 )
-                # تخزين الأسئلة في الذاكرة للأبد
+              except:
+                st.error("تأكد من اتصالك بالانترنت ")   
+              try :  
                 st.session_state["quiz_data1"] = json.loads(response.text)
+              except:
+                 st.error("يبدوا ان الاسئلة لم تكن صحيحة حاول مرة اخرى")   
 
         # ---------------------------------------------------------
         # عرض الفورم (باستخدام اسم فريد لتجنب الـ Duplicate Error)
@@ -105,6 +110,7 @@ def processing_text (file, mode_selection, manual_page_num):
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
 
 
 
