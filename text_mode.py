@@ -103,13 +103,14 @@ def processing_text (file, mode_selection, manual_page_num,num_questions,difficu
             
 
             st.success(f"Excellent! Your score is {actual_score} / {len(st.session_state['quiz_data1'])}")
-            if actual_score == 5:
+            if actual_score == len((st.session_state["quiz_data1"])):
               st.balloons()
               st.success("عبقري! إجابة كاملة 🌟")
-            elif actual_score >= 5 / 2:
+            elif actual_score >= len((st.session_state["quiz_data1"])) / 2:
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
 
 
 
