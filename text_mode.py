@@ -34,8 +34,8 @@ def processing_text (file, mode_selection, manual_page_num):
          
 
          my_prompt = f"""أنت مدرس خبير ومبرمج متخصص في معالجة البيانات. 
-المهمة: استخرج 5 أسئلة اختيار من متعدد (MCQ) بناءً على النص الموجود بين العلامات التاليه [START] و [END].
-
+المهمة: استخرج {num_questions} أسئلة اختيار من متعدد (MCQ) بناءً على النص الموجود بين العلامات التاليه [START] و [END].
+مستوى صعوبة الاسئلة {difficulty}
 الشروط الصارمة:
 1. يجب أن يكون الرد بصيغة JSON نقي فقط (Strict JSON).
 2. لا تكتب أي مقدمات أو خاتمة (مثل: "تفضل الأسئلة").
@@ -105,6 +105,7 @@ def processing_text (file, mode_selection, manual_page_num):
               st.success("أداء جيد جداً! 👍")
             else:
               st.warning("محاولة جيدة، حاول مرة أخرى لتحسين درجتك. 💪")
+
 
 
 
