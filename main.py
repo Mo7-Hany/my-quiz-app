@@ -74,7 +74,7 @@ if file:
     st.sidebar.subheader("إعدادات الصفحات")
     page_selection_mode = st.sidebar.radio(
         "اختر طريقة معالجة الصفحات:",
-        ["كل الصفحات (Text Mode فقط)", "صفحة محددة يدويًا", "صفحة عشوائية 🎲"]
+        [ "صفحة محددة يدويًا", "صفحة عشوائية 🎲"]
     )
 
     if page_selection_mode == "صفحة محددة يدويًا" :
@@ -94,6 +94,7 @@ if file:
       st.write("please select an mode from sidebar ")      
 
         
+
 
 
 
