@@ -20,7 +20,7 @@ def processing_text (file, mode_selection, manual_page_num,num_questions,difficu
           total_pages = len(pdf.pages)
         
         # منطق اختيار النص بناءً على طلبك
-          if mode_selection == "صفحة عشوائية 🎲":
+          if mode_selection == "صفحة عشوائية":
             target = random.randint(0, total_pages - 1)
             pages_to_process = [pdf.pages[target]]
             st.info(f"تم اختيار الصفحة رقم {target + 1} عشوائياً")
