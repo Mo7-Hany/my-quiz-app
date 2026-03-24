@@ -74,7 +74,7 @@ if file:
     st.sidebar.subheader("إعدادات الصفحات")
     page_selection_mode = st.sidebar.radio(
         "اختر طريقة معالجة الصفحات:",
-        [ "صفحة محددة يدويًا", "صفحة عشوائية 🎲"]
+        [ "صفحة عشوائية","صفحة محددة يدويا"]
     )
     num_questions = st.slider("Number of questions", min_value=1, max_value=20, value=5)
     difficulty = st.selectbox("Difficulty level", ("easy", "medium", "hard"))
