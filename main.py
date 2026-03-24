@@ -97,7 +97,7 @@ if file:
        with st.spinner("Processing using Text Mode..."):
          processing_text(file, page_selection_mode, selected_page,num_questions,difficulty)
     else :
-      st.write("please select an mode from sidebar ")      
+      st.error("please select an mode from sidebar ")      
 
         
 
