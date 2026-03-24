@@ -17,7 +17,7 @@ def processing_image(file,mode_selection, manual_page_num,num_questions,difficul
           total_pages = len(pdf)
         
         # 1. حدد الصفحة المطلوبة أولاً
-          if mode_selection == "صفحة عشوائية 🎲":
+          if mode_selection == "صفحة عشوائية":
             target = random.randint(0, total_pages - 1)
           elif mode_selection == "صفحة محددة يدويًا":
             target = min(manual_page_num, total_pages) - 1
