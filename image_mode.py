@@ -22,7 +22,7 @@ def processing_image(file,mode_selection, manual_page_num,num_questions,difficul
           elif mode_selection == "صفحة محددة يدويًا":
             target = min(manual_page_num, total_pages) - 1
           else:
-            target = 0
+            st.error("please select page from sidebar ")
             
         # 2. الآن استخرج "كائن الصفحة" ثم حوله لصور (هنا الحل)
           page_obj = pdf[target] 
