@@ -12,8 +12,8 @@ def clean (text) :
       return(re.sub(pattern,"",text)) 
 
 def processing_text (file, mode_selection, manual_page_num,num_questions,difficulty):
-      
-      client = genai.Client(api_key=st.secrets["api_key"])
+      api_key = st.secrets["api_key"]
+      client = genai.Client(api_key=api_key)
       all_text = ""      
       if file is not None :
          with pdfplumber.open(file) as pdf:
