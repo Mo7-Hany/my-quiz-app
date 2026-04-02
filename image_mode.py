@@ -6,9 +6,9 @@ from google.genai import types
 import random
 
 def processing_image(file,mode_selection,manual_page_num,num_questions,difficulty):
-      
+    api_key =   st.secrets["api_key"]
                      
-    client = genai.Client(api_key= st.secrets["api_key"])
+    client = genai.Client(api_key= api_key)
 
     if file is not None:
         # قراءة الملف وتحويله لصور (كما في كودك)
