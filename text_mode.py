@@ -13,7 +13,7 @@ def clean (text) :
 
 def processing_text (file, mode_selection, manual_page_num,num_questions,difficulty):
       
-      client = genai.Client(api_key=st.secret["api_key"])
+      client = genai.Client(api_key=st.secrets["api_key"])
       all_text = ""      
       if file is not None :
          with pdfplumber.open(file) as pdf:
