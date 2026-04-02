@@ -12,7 +12,7 @@ def clean (text) :
       return(re.sub(pattern,"",text)) 
 
 def processing_text (file, mode_selection, manual_page_num,num_questions,difficulty):
-      api_key ="AIzaSyByeG3UKg69KoMFqNMlHfwbeDLybyRgdis"
+      
       client = genai.Client(api_key=api_key)
       all_text = ""      
       if file is not None :
