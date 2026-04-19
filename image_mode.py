@@ -71,6 +71,7 @@ def processing_image(file,mode_selection,manual_page_num,num_questions,difficult
                 
                except: 
                  st.error("تأكد من اتصالك بالانترنت ") 
+                 st.stop()  
                 
                try :  
                  st.session_state["quiz_data1"] = json.loads(response.text)
