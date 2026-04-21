@@ -65,7 +65,11 @@ def processing_image(file,mode_selection,manual_page_num,num_questions,difficult
                         my_prompt,
                         types.Part.from_bytes(data=image_bytes, mime_type="image/png")
                     ],
-                    config={"response_mime_type": "application/json"}
+                    config = types.GenerateContentConfig(
+                             response_mime_type="application/json",
+                               # response_json_schema=Question.model_json_schema(),  # أضف هذا لضمان JSON صالح
+                             temperature=0.2,   # أو أي إعدادات أخرى
+                    )
                 )
                 # تخزين الأسئلة في الذاكرة للأبد
                 
