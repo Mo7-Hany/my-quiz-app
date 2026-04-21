@@ -1,4 +1,4 @@
-جimport fitz
+import fitz
 import streamlit as st 
 from google import genai
 import json
