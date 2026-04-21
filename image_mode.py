@@ -1,4 +1,4 @@
-import fitz
+جimport fitz
 import streamlit as st 
 from google import genai
 import json
@@ -60,7 +60,7 @@ def processing_image(file,mode_selection,manual_page_num,num_questions,difficult
             with st.spinner("جاري توليد الأسئلة من جيميني..."):
                try:
                  response = client.models.generate_content(
-                    model="gemini-2.5-flash-lite", 
+                    model="gemini-3.0-flash", 
                     contents=[
                         my_prompt,
                         types.Part.from_bytes(data=image_bytes, mime_type="image/png")
